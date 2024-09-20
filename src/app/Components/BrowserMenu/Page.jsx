@@ -12,7 +12,7 @@ const BrowserMenu = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-semibold">Browse Our Menu</h2>
       </div>
-      <div className=" mx-auto grid grid-cols-1 w-10/12 justify-items-center  sm:grid-cols-2 lg:grid-cols-4 gap-12 px-4">
+      <div className=" mx-auto grid grid-cols-1 lg:w-[88%] justify-items-center  sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-12 px-4">
         {[
           {
             name: "Breakfast",
@@ -41,7 +41,7 @@ const BrowserMenu = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className="px-4 ring-2 w-[306px] h-[375px] ring-[#DBDFD0]   hover:scale-[1.02] hover:cursor-pointer  duration-700 group pt-10   rounded-lg text-center"
+            className="px-4 ring-2 w-11/12 h-[375px] lg:w-[270px] lg:h-[335px] xl:w-[306px] xl:h-[375px] ring-[#DBDFD0]   hover:scale-[1.02] hover:cursor-pointer  duration-700 group pt-10   rounded-lg text-center"
           >
             <div className="text-4xl mb-4 m-auto flex justify-center">
               <div className="bg-gray-300 bg-opacity-50 rounded-full py-4 px-4 ">

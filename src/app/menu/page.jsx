@@ -97,7 +97,7 @@ const Page = () => {
       : cardCategories[selectedTab] || [];
 
   return (
-    <section className="mt-32 mb-10">
+    <section className="mt-10 mb-10">
       <div className="flex flex-col m-auto justify-center items-center">
         <p className="text-center text-[#2C2F24] text-4xl md:text-5xl lg:text-7xl font-bold italic">
           Our Menu
@@ -112,10 +112,10 @@ const Page = () => {
           <div
             key={tabId}
             onClick={() => setSelectedTab(parseInt(tabId, 10))}
-            className={`cursor-pointer px-4 lg:px-6 py-2 text-base md:text-lg lg:text-xl ${
+            className={`cursor-pointer px-4 lg:px-8 py-2 text-base md:text-lg lg:text-xl ${
               selectedTab === parseInt(tabId, 10)
                 ? "bg-[#AD343E] text-white px-4 lg:px-6 rounded-full"
-                : "bg-transparent border border-gray-400 px-4 lg:px-6 rounded-full text-[#2C2F24]"
+                : "bg-transparent border border-gray-400 px-4 lg:px-8 rounded-full text-[#2C2F24]"
             }`}
           >
             {tabId === "1"
@@ -130,12 +130,12 @@ const Page = () => {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-4 gap-4 w-11/12 lg:w-10/12 m-auto justify-items-center mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:w-11/12  xl:w-[88%]   md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4   m-auto justify-items-center mt-10">
         {currentCards.map((card, index) => (
           <div
             key={card.id}
-            className={`w-full pb-3 group duration-500 relative lg:w-11/12 border cursor-pointer bg-white shadow-md rounded-lg flex flex-col items-center overflow-hidden ${
-              index === 0 ? "ml-auto" : ""
+            className={` pb-3  group duration-500 relative w-[306px] h-[428px]  ring-2 ring-[#DBDFD0] cursor-pointer   rounded-lg flex flex-col items-center overflow-hidden ${
+              index === 0 ? "" : ""
             }`}
           >
             <div className="w-full h-60 overflow-hidden relative">
@@ -147,7 +147,7 @@ const Page = () => {
                 className="transform group-hover:scale-105 group-hover:blur-sm group-hover:brightness-[0.8] transition-all duration-700"
               />
             </div>
-            <p className="text-xl md:text-2xl lg:text-3xl mt-2  text-[#AD343E]   font-semibold mb-4">
+            <p className="text-xl  md:text-2xl lg:text-3xl mt-6  text-[#AD343E]   font-semibold mb-4">
               {card.price}
             </p>
             <h2 className="text-lg md:text-xl lg:text-2xl group-hover:underline duration-700 text-[#2C2F24] font-bold mb-2">

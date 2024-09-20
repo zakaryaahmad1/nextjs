@@ -1,41 +1,43 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Logo from "../../../../public/images/logo.png";
-import { useRouter } from 'next/router';
+import { usePathname } from "next/navigation"; // New way to get path in Next.js 13
+import Image from "next/image";
+import Logo from '../../../../public/images/logo.png'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const router=useRouter();
+  const pathname = usePathname(); // Hook to get the current route
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="bg-white  px-4 py-2 sticky top-0 shadow-md flex justify-between lg:justify-evenly items-center w-full z-50">
-      {/* Logo Section */}
-      <Link href={"/"}>
+    <nav className="bg-white px-4 py-4 sticky top-0  flex justify-between lg:justify-evenly items-center w-full z-50">
+      <Link href="/">
         <div className="text-lg md:text-3xl font-bold italic text-[#474747] flex items-center gap-2">
-          <Image src={Logo} className="w-14 " />
+          {/* Logo Section */}
+          <Image src={Logo} className="w-10 h-10" />
           <p>Bistro Bliss</p>
         </div>
       </Link>
+
       {/* Desktop Links */}
       <ul className="hidden lg:flex space-x-6 items-center">
-        <li className="bg-lime-300  rounded-full px-4 py-1">
+        <li className={pathname === "/" ? "bg-[#DBDFD0] rounded-full px-4 py-1" : "px-4 py-1"}>
           <Link href="/">Home</Link>
         </li>
-        <li>
+        <li className={pathname === "/about" ? "bg-[#DBDFD0] rounded-full px-4 py-1" : "px-4 py-1"}>
           <Link href="/about">About</Link>
         </li>
-        <li>
+        <li className={pathname === "/menu" ? "bg-[#DBDFD0] rounded-full px-4 py-1" : "px-4 py-1"}>
           <Link href="/menu">Menu</Link>
         </li>
-        <li>
+        <li className={pathname === "/pages" ? "bg-[#DBDFD0] rounded-full px-4 py-1" : "px-4 py-1"}>
           <Link href="/pages">Pages</Link>
         </li>
-        <li>
+        <li className={pathname === "/contact" ? "bg-[#DBDFD0] rounded-full px-4 py-1" : "px-4 py-1"}>
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
@@ -46,7 +48,7 @@ const Navbar = () => {
       </button>
 
       {/* Mobile Hamburger Icon */}
-      <button onClick={toggleMenu} className="z-50 p-2  lg:hidden">
+      <button onClick={toggleMenu} className="z-50 p-2 lg:hidden">
         <svg
           className="w-6 h-6"
           fill="none"
@@ -67,8 +69,8 @@ const Navbar = () => {
       <div
         className={
           isOpen
-            ? `absolute top-16  duration-1000 left-0 w-full bg-white shadow-md z-50 transition-transform  ease-in-out 0`
-            : "absolute -top-96 left-0 w-full bg-white shadow-md z-50 transition-transform  ease-in-out "
+            ? `absolute top-16 duration-1000 left-0 w-full bg-white shadow-md z-50 transition-transform ease-in-out`
+            : "absolute -top-96 left-0 w-full bg-white shadow-md z-50 transition-transform ease-in-out"
         }
       >
         <ul className="flex flex-col items-center space-y-4 py-4">
