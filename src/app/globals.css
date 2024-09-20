@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+
+body{
+  padding-bottom: 20px;
+  background-color: white;
 }
-
-
 .hero-section {
-  background-image: url('../../public/images/back.jpg');
-  background-size: cover;
-  background-position: center;
+  background-image: url('../../public/images/slider.png');
+  
+  
 }

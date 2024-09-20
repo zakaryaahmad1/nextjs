@@ -3,13 +3,13 @@ import React from "react";
 
 const Head = () => {
   return (
-    <section className="relative h-[80vh] bg-cover bg-center hero-section">
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <section className=" h-screen lg:h-screen bg-cover   bg-top  hero-section">
+      
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4">
-        <h1 className="text-3xl md:text-5xl italic font-bold mb-4 text-[#ececec] leading-tight">
+        <h1 className="text-3xl md:text-5xl italic font-bold mb-4 text-[#2C2F24] leading-tight">
           Best food for <br /> your taste
         </h1>
-        <p className="text-lg md:text-xl mb-8 text-[#ececec] leading-relaxed">
+        <p className="text-lg md:text-xl mb-8 text-[#2C2F24] leading-relaxed">
           Discover delectable cuisine and unforgettable moments in our{" "}
           <br className="hidden md:inline" />
           welcoming, culinary haven.
@@ -18,7 +18,7 @@ const Head = () => {
           <button className="bg-[#AD343E] hover:bg-[#882931] duration-500 rounded-full px-6 py-3">
             Book A Table
           </button>
-          <button className="border rounded-full border-gray-100 text-gray-50 hover:bg-slate-900 duration-700 hover:border-slate-900 px-6 py-3">
+          <button className="border rounded-full border-[#182226] text-[#182226] hover:text-white hover:bg-slate-900 duration-700 hover:border-slate-900 px-6 py-3">
             Explore Menu
           </button>
         </div>
